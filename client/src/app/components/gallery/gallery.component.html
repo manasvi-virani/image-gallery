@@ -1,0 +1,21 @@
+<div class="gallery-container">
+  @if (loading) {
+    <div class="loading-state">Loading images...</div>
+  } @else if (error) {
+    <div class="error-state">{{error}}</div>
+  } @else if (images.length === 0) {
+    <div class="empty-state">No images uploaded yet</div>
+  } @else {
+    @for (img of images; track img.url) {
+      <div class="card">
+        <div class="card-image">
+          <img [src]="getImageUrl(img.url)" [alt]="img.filename" loading="lazy" crossorigin="anonymous" />
+        </div>
+        <div class="card-footer">
+          <span class="filename">{{img.filename}}</span>
+        </div>
+      </div>
+    }
+  }
+</div>
+  

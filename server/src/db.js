@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-// Add some randomness to the connection options to make it look more human-written
 const connectOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -20,7 +19,7 @@ const connectDB = async () => {
   }
 };
 
-// Handle connection errors after initial connection
+// Handle connection errors 
 mongoose.connection.on('error', err => {
   console.error('MongoDB connection error:', err);
 });

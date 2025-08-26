@@ -12,7 +12,7 @@
   background: #f8f9fa;
   transition: all 0.3s ease;
   cursor: pointer;
-  min-height: 200px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +27,7 @@
 .upload-zone.uploading {
   border-color: #007bff;
   background: #e7f5ff;
+  min-height: 200px;
 }
 
 .upload-zone.success {

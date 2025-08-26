@@ -9,8 +9,18 @@
     @for (img of images; track img.url) {
       <div class="card">
         <div class="card-image">
-          <img [src]="getImageUrl(img.url)" [alt]="img.filename" loading="lazy" crossorigin="anonymous" />
-        </div>
+  <div class="skeleton-wrapper" *ngIf="!imgLoaded[img.url]"></div>
+
+  <img
+    [src]="getImageUrl(img.url)"
+    [alt]="img.filename"
+    loading="lazy"
+    crossorigin="anonymous"
+    (load)="imgLoaded[img.url] = true"
+    (error)="imgLoaded[img.url] = true"
+    [class.hidden]="!imgLoaded[img.url]"
+  />
+</div>
         <div class="card-footer">
           <span class="filename">{{img.filename}}</span>
         </div>

@@ -18,6 +18,7 @@ export class GalleryComponent implements OnInit, OnDestroy {
   error: string | null = null;
   private refreshSubscription: Subscription;
   getImageUrl: (url: string) => string;
+  imgLoaded: { [url: string]: boolean } = {};
 
   constructor(
     private api: ImageService,

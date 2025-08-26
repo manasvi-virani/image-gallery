@@ -33,8 +33,4 @@ export class ImageService {
     form.append('image', file);
     return this.http.post<ImageItem>(`${this.base}/api/images`, form);
   }
-
-  remove(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.base}/api/images/${id}`);
-  }
 }

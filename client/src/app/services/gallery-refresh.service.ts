@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class GalleryRefreshService {
   private refreshSubject = new Subject<void>();
-  refresh$ = this.refreshSubject.asObservable();
+  readonly   refresh$ = this.refreshSubject.asObservable();
 
   triggerRefresh() {
     this.refreshSubject.next();
